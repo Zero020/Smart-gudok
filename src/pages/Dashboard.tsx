@@ -6,7 +6,7 @@ import icon_alert from "..//assets/icon_alert.svg";
 import icon_alert_yellow from "..//assets/icon_alert_yellow.svg";
 import icon_down from "..//assets/icon_down.svg";
 
-const COLORS = ['#14B8A6', '#2DD4BF', '#99F6E4', '#CCFBF1', '#FDBA74', '#F9A8D4'];
+const COLORS = ['#14B8A6', '#2DD4BF', '#85CFC2', '#4BB09F', '#1C8674', '#B9E4DD'];
 
 const Dashboard = () => {
   const { subscriptions } = useSubscriptions();
@@ -149,13 +149,13 @@ drop-shadow-[0_5px_20px_rgba(0,0,0,0.15)] p-8 rounded-2xl text-white shadow-lg r
                 <div key={sub.id} className="flex justify-between items-center py-3 px-4 hover:bg-teal-50 rounded-2xl transition-all border border-transparent hover:border-teal-100 bg-gray-50/50">
                   <div>
                     <div className="font-normal text-gray-800">{sub.name}</div>
-                    <div className="text-[13px] text-teal-600 font-normal bg-white px-2 py-0.5  inline-block mt-1">
+                    <div className="text-[13px] text-primary font-normal py-0.5 inline-block mt-1">
                       {sub.billingDate}일 결제
                     </div>
                   </div>
                   <div className="text-right">
                     <div className="font-black text-gray-900 font-normal">{(sub.price / sub.sharedPeople).toLocaleString()}원</div>
-                    <div className={`text-[13px] font-normal mt-1 ${dDay === 0 ? 'text-red-500' : 'text-teal-500'}`}>
+                    <div className={`text-[13px] font-normal mt-1 ${dDay === 0 ? 'text-red-500' : 'text-primary'}`}>
                       {dDay === 0 ? '오늘 결제 ♨' : `${dDay}일 후`}
                     </div>
                   </div>
@@ -190,8 +190,8 @@ drop-shadow-[0_5px_20px_rgba(0,0,0,0.15)] p-8 rounded-2xl text-white shadow-lg r
               </div>
             ))
           ) : (
-            <div className="col-span-2 p-10 bg-white rounded-2xl text-center text-gray-400 border-2 border-dashed border-gray-100">
-              모든 서비스를 알차게 구독 중입니다!
+            <div className="col-span-2 p-10 rounded-2xl text-left text-gray-400 border-2 border-dashed border-gray-100">
+              와우, 모든 서비스를 알차게 구독 중이시군요!
             </div>
           )}
         </div>
