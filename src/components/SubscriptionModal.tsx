@@ -97,7 +97,11 @@ const SubscriptionModal = ({ isOpen, onClose, onSubmit, editingSub, subscription
                             className="w-full bg-gray-50 border border-gray-200 rounded-xl px-4 py-3 outline-none focus:border-primary transition-all"
                             placeholder="Netflex, Wave 등"
                             value={formData.name}
-                            onChange={e => setFormData({ ...formData, name: e.target.value })}
+                            onChange={e => {
+                                const value = Number(e.target.value)
+                                setFormData({ ...formData, usageLevel: value })
+                                trackEvent('usage_level_change', { value })
+                            }}
                         />
                     </div>
 
